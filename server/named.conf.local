@@ -1,0 +1,9 @@
+zone "project.com" {
+	type master;
+	file "/etc/bind/zones/db.project.com";
+};
+
+zone "128.10.in-addr.arpa" {
+	type master;
+	file "etc/bind/zones/db.10.128";
+};

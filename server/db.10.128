@@ -1,0 +1,19 @@
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	project.com. admin.project.com. (
+			      3		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+
+; name servers
+	IN	NS	server1.project.com.
+
+; PTR Records
+11.10	IN	PTR	server1.project.com.	; 10.128.10.11
+101.100	IN	PTR	host1.project.com	; 10.128.100.101
+102.200	IN	PTR	host2.project.com	; 10.128.200.102	

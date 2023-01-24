@@ -1,0 +1,21 @@
+acl "trusted" {
+	10.120.10.11;   #server1
+	10.128.100.101; #host1
+	10.128.200.102; #host2
+};
+
+options {
+	directory "/var/cache/bind";
+	
+	listen-on { any; };
+	allow-transfer { none; };
+
+	forwarders {
+		8.8.8.8;
+		8.8.4.4;
+	};
+
+	dnssec-validation auto;
+
+	listen-on-v6 { any; };
+};

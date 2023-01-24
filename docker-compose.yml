@@ -1,0 +1,14 @@
+version: "20.10.21"
+services:
+  bind9-server:
+    build: ./server
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+      - "953:953/udp"
+      - "953:953/tcp"
+    tty: true
+
+  nslookup-client:
+    build: ./client
+    command: bash -c "nslookup server1.project.com bind9-server && nslookup host1.project.com bind9-server && nslookup host2.project.com bind9-server"
